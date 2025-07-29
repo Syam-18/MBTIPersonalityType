@@ -23,12 +23,14 @@ watch(
 )
 
 const goToNextQuestion = () => {
-  addSelectedOption(selected.value)
-  if (qNo.value <= 5) {
-    router.replace(`/quiz/question/${qNo.value + 1}`)
-  }
-  else {
-    router.replace('/quiz/results')
+  if (selected.value) {
+    addSelectedOption(selected.value)
+    if (qNo.value <= 11) {
+      router.replace(`/quiz/question/${qNo.value + 1}`)
+    }
+    else {
+      router.replace('/quiz/results')
+    }
   }
 }
 </script>
