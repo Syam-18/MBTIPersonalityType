@@ -1,6 +1,10 @@
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router'
 const emit = defineEmits(['closeModal'])
+const name = ref('')
+const age = ref('')
+// const gender = ref('')
 </script>
 <template>
   <div class="md:w-[50vw] xl:w-[30vw] w-[80vw] min-h-[50vh] bg-[#9D46E8] flex flex-col md:p-12 p-4 relative">
@@ -13,6 +17,7 @@ const emit = defineEmits(['closeModal'])
         type="text"
         class="border-[#ffdd33] text-[#ffdd33] focus:border-3 font-medium border-2 rounded focus:outline-none px-4 py-2 grow"
         placeholder="name"
+        v-model="name"
       />
     </div>
     <div class="flex items-center gap-4 w-[100%] my-2">
@@ -22,6 +27,7 @@ const emit = defineEmits(['closeModal'])
         min="1"
         class="border-[#ffdd33] text-[#ffdd33] focus:border-3 font-medium border-2 rounded focus:outline-none px-4 py-2 grow"
         placeholder="age"
+        v-model="age"
       />
     </div>
     <div class="flex items-center gap-4 w-[100%] my-2">
@@ -33,7 +39,7 @@ const emit = defineEmits(['closeModal'])
         <option class="p-0 m-0">Female</option>
       </select>
     </div>
-    <RouterLink to="/quiz/question/1" class="self-center">
+    <RouterLink to="/quiz/question/1" class="self-center" v-if=" name && age ">
       <button
         class="flex justify-center items-center group text-[#97dafc] md:mt-16 mt-8 gap-2 border-[#97dafc] focus:outline-[#97dafc] border-2 rounded-2xl px-4 py-2 self-center cursor-pointer hover:bg-[#6DB6DE] hover:text-white transition-all duration-500"
       >
