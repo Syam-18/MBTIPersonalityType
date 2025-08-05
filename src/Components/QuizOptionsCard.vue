@@ -45,7 +45,7 @@ const goToNextQuestion = () => {
         {{ question.question }}
       </h1>
       <label
-        class="hover:bg-amber-50 md:p-2 md:px-4 p-1 pl-2 rounded w-full m-1 flex gap-4 items-center cursor-pointer text-sm md:text-auto"
+        class="hover:bg-amber-50 md:p-2 md:px-4 p-1 pl-2 rounded w-full m-1 flex gap-4 items-center cursor-pointer text-sm md:text-lg"
         :class="selected === question.trait[0] ? 'bg-amber-50' : 'bg-white'"
       >
         <input
@@ -61,7 +61,7 @@ const goToNextQuestion = () => {
       </label>
 
       <label
-        class="hover:bg-amber-50 md:p-2 md:px-4 p-1 pl-2 rounded w-full m-1 flex gap-4 items-center cursor-pointer text-sm md:text-auto"
+        class="hover:bg-amber-50 md:p-2 md:px-4 p-1 pl-2 rounded w-full m-1 flex gap-4 items-center cursor-pointer text-sm md:text-lg"
         :class="selected === question.trait[1] ? 'bg-amber-50' : 'bg-white'"
       >
         <input
@@ -98,7 +98,7 @@ const goToNextQuestion = () => {
         class="flex gap-2 items-center bg-[#B56FED] hover:bg-[#A55EE0] text-white px-4 py-1 rounded cursor-pointer ml-1"
         @click="goToNextQuestion"
       >
-        <button class="font-medium cursor-pointer tracking-wide">Next</button>
+        <button class="font-medium cursor-pointer tracking-wide md:text-lg">Next</button>
         <i class="fa-solid fa-forward cursor-pointer font-[100]"></i>
       </div>
     </div>
