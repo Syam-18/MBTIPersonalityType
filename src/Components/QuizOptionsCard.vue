@@ -25,10 +25,10 @@ watch(
 const goToNextQuestion = () => {
   if (selected.value) {
     addSelectedOption(selected.value)
-    if (qNo.value === 2) {
+    if (qNo.value === 12) {
       addUser()
     }
-    if (qNo.value <= 1) {
+    if (qNo.value <= 11) {
       router.replace(`/quiz/question/${qNo.value + 1}`)
     }
     else {
