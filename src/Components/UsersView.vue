@@ -10,7 +10,7 @@ const filteredUsers = computed(() =>
   usersList.value.filter(
     (user) =>
       user.name.toLowerCase().includes(searchInput.value.toLowerCase()) ||
-      user.result.toLowerCase().includes(searchInput.value.toLowerCase()),
+      getPersonalityFromTraits(user.traitsCount).toLowerCase().includes(searchInput.value.toLowerCase()),
   ),
 )
 
@@ -40,5 +40,6 @@ function getPersonalityFromTraits(t) {
         <p>{{ getPersonalityFromTraits(user.traitsCount) }}</p>
       </li>
     </ul>
+    <p v-if="filteredUsers.length === 0" class="text-center w-full">No user found with name {{ `"${searchInput}"` }}</p>
   </div>
 </template>

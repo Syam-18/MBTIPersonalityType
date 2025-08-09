@@ -35,6 +35,7 @@ const filteredTypes = computed(() => {
         </tr>
       </tbody>
     </table>
+    <p v-if="filteredTypes.length === 0" class="text-center w-full mt-3">No types found with {{ `"${searchInput}"` }}</p>
   </div>
 </template>
 <style scoped>
