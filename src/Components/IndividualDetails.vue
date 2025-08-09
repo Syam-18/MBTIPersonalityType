@@ -1,10 +1,9 @@
 <script setup>
-import { ref } from 'vue';
+import { useAnswers } from '@/stores/results';
+import { storeToRefs } from 'pinia';
 import { RouterLink } from 'vue-router'
 const emit = defineEmits(['closeModal'])
-const name = ref('')
-const age = ref('')
-// const gender = ref('')
+const {name, age, gender} = storeToRefs(useAnswers())
 </script>
 <template>
   <div class="md:w-[50vw] xl:w-[30vw] w-[80vw] min-h-[50vh] bg-[#9D46E8] flex flex-col md:p-12 p-4 relative">
@@ -34,6 +33,7 @@ const age = ref('')
       <i class="fa-solid fa-venus-mars text-[#ffdd33] w-[5%]"></i>
       <select
         class="border-[#ffdd33] text-[#ffdd33] focus:border-3 font-medium border-2 rounded focus:outline-none px-4 py-2 grow"
+        v-model="gender"
       >
         <option class="p-0 m-0">Male</option>
         <option class="p-0 m-0">Female</option>

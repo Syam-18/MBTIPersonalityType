@@ -4,7 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { personalityQuestions } from '../PersonalityQuestions'
 import { useAnswers } from '@/stores/results'
 const answersSet = useAnswers()
-const { addSelectedOption } = answersSet
+const { addSelectedOption, addUser } = answersSet
 
 const route = useRoute()
 const router = useRouter()
@@ -25,7 +25,10 @@ watch(
 const goToNextQuestion = () => {
   if (selected.value) {
     addSelectedOption(selected.value)
-    if (qNo.value <= 11) {
+    if (qNo.value === 2) {
+      addUser()
+    }
+    if (qNo.value <= 1) {
       router.replace(`/quiz/question/${qNo.value + 1}`)
     }
     else {
@@ -33,11 +36,18 @@ const goToNextQuestion = () => {
     }
   }
 }
+
+// const onClickLetsGo = () => {
+//   const usersList = JSON.parse(localStorage.getItem('users')) || []
+//   const newUser = { name: name, age: age, gender: gender, traitsCount: traitsCount }
+//   usersList.push(newUser)
+//   localStorage.setItem('users', JSON.stringify(usersList))
+// }
 </script>
 
 <template>
   <div
-    class="bg-[#FFAC8C] flex flex-col h-[70vh] md:h-[80vh] md:w-[50vw] rounded items-center justify-center"
+    class="bg-[#FFAC8C] flex flex-col h-[70vh] md:h-[80vh] md:w-[50vw] rounded items-center justify-center self-center"
     v-if="question"
   >
     <div class="w-[90%] text-black">

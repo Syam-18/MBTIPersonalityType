@@ -13,14 +13,14 @@ const filteredTypes = computed(() => {
 })
 </script>
 <template>
-  <div class="text-black w-[50vw]">
+  <div class="text-black md:w-[50vw] w-[80vw] flex flex-col items-center">
     <input
       type="search"
       placeholder="Search Personality Types"
-      class="w-[30%] mb-4 p-2 rounded bg-black text-white focus:outline-none"
+      class="md:w-[30%] w-[100%] mb-4 p-2 rounded bg-black text-white focus:outline-none"
       v-model="searchInput"
     />
-    <h1 class="text-2xl mb-4 font-semibold">Personality Types</h1>
+    <h1 class="text-2xl mb-4 font-semibold text-left">Personality Types</h1>
     <table class="w-full">
       <tbody class="w-full">
         <tr>
@@ -43,6 +43,7 @@ tr {
 }
 td {
   padding: 8px;
+  word-wrap: break-word;
 }
 tbody > tr:first-child {
   font-size: 1.2em;

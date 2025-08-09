@@ -1,10 +1,18 @@
 <script setup>
 import { ref } from 'vue'
 import IndividualDetails from './IndividualDetails.vue'
+import { useAnswers } from '@/stores/results'
 const isStarted = ref(false)
 const handleClose = () => {
   isStarted.value = false
 }
+const userInstance = useAnswers()
+
+const startTest = () => {
+  isStarted.value = true
+  userInstance.resetAnswers()
+}
+
 </script>
 
 <template>
@@ -13,7 +21,7 @@ const handleClose = () => {
     <p class="text-[#555a6a] md:text-lg text-sm">Get a idea about your personality type under 3mins!</p>
     <button
       class="bg-black text-white rounded px-4 py-2 my-3 cursor-pointer"
-      @click="isStarted = !isStarted"
+      @click="startTest"
     >
       Start Test
     </button>
@@ -22,5 +30,3 @@ const handleClose = () => {
     <IndividualDetails class="z-10" @close-modal="handleClose"/>
   </div>
 </template>
-
-<style scoped></style>

@@ -1,19 +1,11 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
-
-// import HomeView from './Components/HomeView.vue';
-
-// import IndividualDetails from './Components/IndividualDetails.vue';
-// import PersonalityTypes from './Components/PersonalityTypes.vue'
-// import QuizOptionsCard from './Components/QuizOptionsCard.vue'
+import { RouterView } from 'vue-router'
+import NavBar from './Components/NavBar.vue';
 </script>
 <template>
-  <div class="flex flex-col items-center justify-center bg-white w-[100vw] min-h-screen p-8">
-    <!-- <QuizOptionsCard /> -->
-    <!-- <PersonalityTypes/> -->
-     <!-- <IndividualDetails/> -->
-      <!-- <HomeView/> -->
-       <RouterView/>
+  <div class="flex justify-center bg-white max-w-[100vw] min-h-screen p-8 pt-20 md:pt-8">
+    <NavBar/>
+    <RouterView />
   </div>
 </template>
 <style scoped>
@@ -23,9 +15,9 @@ import { RouterView } from 'vue-router';
   /* font-weight: ; */
   font-style: normal;
 }
-*::selection{
+*::selection {
   color: white;
-  background-color: #FFAC8C;
-  padding:10px;
+  background-color: #ffac8c;
+  padding: 10px;
 }
 </style>

@@ -5,10 +5,10 @@ import { computed } from 'vue'
 import { personalityTypes } from '@/PersonalityTypes'
 
 const answersSet = useAnswers()
-const { traitsCount } = storeToRefs(answersSet)
+const { traitsCount, usersList } = storeToRefs(answersSet)
 
 const personality = computed(() => {
-  const t = traitsCount.value
+  const t = usersList.value.length > 0 ? usersList.value[usersList.value.length - 1].traitsCount : traitsCount.value
   return [
     t.I >= t.E ? 'I' : 'E',
     t.S >= t.N ? 'S' : 'N',
@@ -17,8 +17,9 @@ const personality = computed(() => {
   ].join('')
 })
 
-const personaliytType = personalityTypes.find((type) => type.type === personality.value)
-console.log(personaliytType)
+const personalityType = personalityTypes.find((type) => type.type === personality.value)
+
+
 
 const traitPairs = [
   ['I', 'E'],
@@ -29,7 +30,9 @@ const traitPairs = [
 
 const traitPercents = computed(() =>
   traitPairs.map(([left, right]) => {
-    const t = traitsCount.value
+    const t = usersList.value.length > 0
+      ? usersList.value[usersList.value.length - 1].traitsCount
+      : traitsCount.value
     const leftVal = t[left] || 0
     const rightVal = t[right] || 0
     const total = leftVal + rightVal
@@ -45,7 +48,7 @@ const traitPercents = computed(() =>
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center h-[50vh] text-black">
+  <div class="flex flex-col items-center justify-center h-[50vh] text-black self-center">
     <h1 class="md:text-5xl text-3xl font-bold mb-12 text-[#FFAC8C]">Personality Type</h1>
     <div v-for="pair in traitPercents" :key="pair.left + pair.right" class="w-full max-w-xl mb-6">
       <div class="flex justify-between text-sm mb-1 font-medium text-gray-700">
@@ -75,9 +78,9 @@ const traitPercents = computed(() =>
     <div class="md:text-5xl text-4xl font-extrabold text-[#9cc9df] my-4 border-b-3 border-dotted">
       {{ personality }}
     </div>
-    <p>{{ personaliytType.nickname }}</p>
-    <p class="my-3 text-center">You are {{ personaliytType.description }}</p>
+    <p>{{ personalityType?.nickname }}</p>
+    <p class="my-3 text-center">You are {{ personalityType?.description }}</p>
     <span class="font-medium">Fun Fact: </span>
-    <p class="text-sm text-center"> {{ personaliytType.funFact }}</p>
+    <p class="text-sm text-center"> {{ personalityType?.funFact }}</p>
   </div>
 </template>
