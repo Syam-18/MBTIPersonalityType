@@ -17,7 +17,7 @@ const filteredTypes = computed(() => {
     <input
       type="search"
       placeholder="Search Personality Types"
-      class="md:w-[30%] w-[100%] mb-4 p-2 rounded bg-black text-white focus:outline-none"
+      class="md:w-[50%] w-[100%] mb-4 p-2 px-4 bg-white text-black border-black border-1 rounded-4xl focus:outline-none"
       v-model="searchInput"
     />
     <h1 class="text-2xl mb-4 font-semibold text-left">Personality Types</h1>

@@ -20,7 +20,7 @@ const startTest = () => {
     <h1 class="md:text-4xl my-4 font-medium text-2xl">MBTI <br> personality test</h1>
     <p class="text-[#555a6a] md:text-lg text-sm">Get a idea about your personality type under 3mins!</p>
     <button
-      class="bg-black text-white rounded px-4 py-2 my-3 cursor-pointer"
+      class="bg-black text-white hover:bg-white hover:text-black border-2 rounded px-4 py-2 my-3 cursor-pointer"
       @click="startTest"
     >
       Start Test

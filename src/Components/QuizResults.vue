@@ -48,7 +48,7 @@ const traitPercents = computed(() =>
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center h-[50vh] text-black self-center">
+  <div class="flex flex-col items-center justify-center h-[50vh] text-black self-center" v-if="usersList.length !== 0">
     <h1 class="md:text-5xl text-3xl font-bold mb-12 text-[#FFAC8C]">Personality Type</h1>
     <div v-for="pair in traitPercents" :key="pair.left + pair.right" class="w-full max-w-xl mb-6">
       <div class="flex justify-between text-sm mb-1 font-medium text-gray-700">
@@ -78,9 +78,15 @@ const traitPercents = computed(() =>
     <div class="md:text-5xl text-4xl font-extrabold text-[#9cc9df] my-4 border-b-3 border-dotted">
       {{ personality }}
     </div>
-    <p>{{ personalityType?.nickname }}</p>
+    <p class="text-2xl fond-medium">{{ personalityType?.nickname }}</p>
     <p class="my-3 text-center">You are {{ personalityType?.description }}</p>
     <span class="font-medium">Fun Fact: </span>
     <p class="text-sm text-center"> {{ personalityType?.funFact }}</p>
+  </div>
+  <div v-else class="flex flex-col justify-center items-center">
+    <h1 class="mb-4 text-2xl">No latest results</h1>
+    <router-link to="/" class="bg-black text-white rounded p-2 hover:bg-white hover:text-black border-2">
+      Get started with your first test
+    </router-link>
   </div>
 </template>
