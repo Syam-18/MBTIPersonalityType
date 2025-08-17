@@ -11,19 +11,28 @@ watch(() => route.path, (newPath) => {
 })
 </script>
 <template>
-  <ul class="p-4 fixed md:left-10 md:top-[36vh] top-3 z-10 flex md:flex-col md:gap-4 gap-2 bg-white rounded-xl">
-    <RouterLink to="/" :class="{ 'bg-[#2795a2] text-white': currentPath === '/' }">
-      <li class="hover:bg-[#DAEDEC] rounded p-1 px-3 hover:border-[#2795a2] hover:border-2 border-2 border-white">Home</li>
+  <ul class="bg-black md:p-4 top-4 w-[60vw] md:w-auto text-[#808082] rounded fixed md:left-3 md:top-3 md:bottom-3 z-10 flex md:flex-col md:gap-4 md:justify-center gap-2-xl">
+    <RouterLink to="/" :class="{ 'bg-[#2795a2] text-white': currentPath === '/' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 rounded hover:bg-[#272727] grow md:grow-0" title="home">
+      <i class="fa-solid fa-home"></i>
     </RouterLink>
-    <RouterLink to="/types" :class="{ 'bg-[#2795a2] text-white': currentPath === '/types' }">
-      <li class="hover:bg-[#DAEDEC] rounded p-1 px-3 hover:border-[#2795a2] hover:border-2 border-2 border-white">Types</li>
+    <RouterLink to="/users" :class="{ 'bg-[#2795a2] text-white': currentPath === '/users' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 rounded hover:bg-[#272727] grow md:grow-0" title="users">
+      <i class="fa-solid fa-user"></i>
+    </RouterLink>
+    <RouterLink to="/quiz/results" :class="{ 'bg-[#2795a2] text-white': currentPath === '/quiz/results' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 rounded hover:bg-[#272727] grow md:grow-0" title="results">
+      <i class="fa-solid fa-square-poll-vertical"></i>
+    </RouterLink>
+    <RouterLink to="/types" :class="{ 'bg-[#2795a2] text-white': currentPath === '/types' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 rounded hover:bg-[#272727] grow md:grow-0" title="types">
+      <i class="fa-solid fa-circle-info"></i>
+    </RouterLink>
+    <!-- <RouterLink to="/types" :class="{ 'bg-[#2795a2] text-white': currentPath === '/types' }">
+      <li class="hover:bg-[#DAEDEC] p-1 px-3">Types</li>
     </RouterLink>
     <RouterLink to="/users" :class="{ 'bg-[#2795a2] text-white': currentPath === '/users' }">
-      <li class="hover:bg-[#DAEDEC] rounded p-1 px-3 hover:border-[#2795a2] hover:border-2 border-2 border-white">Users</li>
+      <li class="hover:bg-[#DAEDEC] p-1 px-3">Users</li>
     </RouterLink>
     <RouterLink to="/quiz/results" :class="{ 'bg-[#2795a2] text-white': currentPath === '/quiz/results' }">
-      <li class="hover:bg-[#DAEDEC] rounded p-1 px-3 hover:border-[#2795a2] hover:border-2 border-2 border-white">Results</li>
-    </RouterLink>
+      <li class="hover:bg-[#DAEDEC] p-1 px-3">Results</li>
+    </RouterLink> -->
   </ul>
 </template>
 <style scoped>

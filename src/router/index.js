@@ -1,4 +1,5 @@
 import HomeView from '@/Components/HomeView.vue'
+import NotFound from '@/Components/NotFound.vue'
 import PersonalityTypes from '@/Components/PersonalityTypes.vue'
 import QuizOptionsCard from '@/Components/QuizOptionsCard.vue'
 import QuizResults from '@/Components/QuizResults.vue'
@@ -31,6 +32,11 @@ const router = createRouter({
       path: '/quiz/results',
       name: 'QuizResults',
       component: QuizResults,
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'InvalidPage',
+      component: NotFound,
     },
   ],
 })

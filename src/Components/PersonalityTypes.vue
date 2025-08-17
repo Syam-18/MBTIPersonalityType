@@ -16,22 +16,22 @@ const filteredTypes = computed(() => {
   <div class="text-black md:w-[50vw] w-[80vw] flex flex-col items-center">
     <input
       type="search"
-      placeholder="Search Personality Types"
+      placeholder="Search Personality Types eg.INFP"
       class="md:w-[50%] w-[100%] mb-4 p-2 px-4 bg-white text-black border-black border-1 rounded-4xl focus:outline-none"
       v-model="searchInput"
     />
-    <h1 class="text-2xl mb-4 font-semibold text-left">Personality Types</h1>
+    <h1 class="text-2xl mb-4 font-semibold text-left text-[#F54927]">Personality Types</h1>
     <table class="w-full">
-      <tbody class="w-full">
-        <tr>
-          <td>Type</td>
-          <td>Nickname</td>
-          <td>Description</td>
+      <tbody class="w-full bg-gray-800">
+        <tr class="text-[#A3FFB2]">
+          <td class="rounded-md md:rounded-xl">Type</td>
+          <td class="rounded-md md:rounded-xl">Nickname</td>
+          <td class="rounded-md md:rounded-xl">Description</td>
         </tr>
-        <tr v-for="data in filteredTypes" :key="data.type">
-          <td>{{ data.type }}</td>
-          <td>{{ data.nickname }}</td>
-          <td>{{ data.description }}</td>
+        <tr v-for="data in filteredTypes" :key="data.type" class="text-white">
+          <td class="rounded-md md:rounded-xl">{{ data.type }}</td>
+          <td class="rounded-md md:rounded-xl">{{ data.nickname }}</td>
+          <td class="rounded-md md:rounded-xl">{{ data.description }}</td>
         </tr>
       </tbody>
     </table>
@@ -40,7 +40,7 @@ const filteredTypes = computed(() => {
 </template>
 <style scoped>
 tr {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
 }
 td {
   padding: 8px;
@@ -51,7 +51,7 @@ tbody > tr:first-child {
   font-weight: bold;
 }
 tr > td {
-  border: 1px solid black;
+  border: 1px solid white;
   font-size: 1.2rem;
 }
 tr > td:first-child {

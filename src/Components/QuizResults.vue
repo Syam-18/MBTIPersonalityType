@@ -85,8 +85,9 @@ const traitPercents = computed(() =>
   </div>
   <div v-else class="flex flex-col justify-center items-center">
     <h1 class="mb-4 text-2xl">No latest results</h1>
-    <router-link to="/" class="bg-black text-white rounded p-2 hover:bg-white hover:text-black border-2">
-      Get started with your first test
-    </router-link>
+    <p class="text-[#555a6a] mb-2">Get started with your first test </p>
+      <router-link to="/" class="bg-black text-white rounded p-2 hover:bg-white hover:text-black border-2">
+        Take test
+      </router-link>
   </div>
 </template>
