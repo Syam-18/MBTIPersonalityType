@@ -15,6 +15,7 @@ import NavBar from './Components/NavBar.vue'
   font-optical-sizing: auto;
   /* font-weight: ; */
   font-style: normal;
+  box-sizing: border-box;
 }
 *::selection {
   color: white;

@@ -11,17 +11,17 @@ watch(() => route.path, (newPath) => {
 })
 </script>
 <template>
-  <ul class="bg-black md:p-4 top-4 w-[60vw] md:w-auto text-[#808082] rounded fixed md:left-3 md:top-3 md:bottom-3 z-10 flex md:flex-col md:gap-4 md:justify-center gap-2-xl">
-    <RouterLink to="/" :class="{ 'bg-[#2795a2] text-white': currentPath === '/' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 rounded hover:bg-[#272727] grow md:grow-0" title="home">
+  <ul class="bg-black md:p-4 top-4 w-[60vw] md:w-auto text-[#808082] rounded-xl fixed md:left-3 md:top-3 md:bottom-3 z-10 flex md:flex-col md:gap-4 md:justify-center gap-2-xl">
+    <RouterLink to="/" :class="{ 'bg-[#2795a2] text-white': currentPath === '/' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 md:rounded-none md:rounded-t-xl rounded-l-xl hover:bg-[#272727] grow md:grow-0" title="home">
       <i class="fa-solid fa-home"></i>
     </RouterLink>
-    <RouterLink to="/users" :class="{ 'bg-[#2795a2] text-white': currentPath === '/users' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 rounded hover:bg-[#272727] grow md:grow-0" title="users">
+    <RouterLink to="/users" :class="{ 'bg-[#2795a2] text-white': currentPath === '/users' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 hover:bg-[#272727] grow md:grow-0" title="users">
       <i class="fa-solid fa-user"></i>
     </RouterLink>
-    <RouterLink to="/quiz/results" :class="{ 'bg-[#2795a2] text-white': currentPath === '/quiz/results' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 rounded hover:bg-[#272727] grow md:grow-0" title="results">
+    <RouterLink to="/quiz/results" :class="{ 'bg-[#2795a2] text-white': currentPath === '/quiz/results' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 hover:bg-[#272727] grow md:grow-0" title="results">
       <i class="fa-solid fa-square-poll-vertical"></i>
     </RouterLink>
-    <RouterLink to="/types" :class="{ 'bg-[#2795a2] text-white': currentPath === '/types' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 rounded hover:bg-[#272727] grow md:grow-0" title="types">
+    <RouterLink to="/types" :class="{ 'bg-[#2795a2] text-white': currentPath === '/types' }" class="flex items-center justify-center gap-1 hover:text-[#eeedf2] p-3 md:rounded-none md:rounded-b-xl rounded-r-xl hover:bg-[#272727] grow md:grow-0" title="types">
       <i class="fa-solid fa-circle-info"></i>
     </RouterLink>
     <!-- <RouterLink to="/types" :class="{ 'bg-[#2795a2] text-white': currentPath === '/types' }">

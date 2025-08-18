@@ -47,7 +47,7 @@ const goToNextQuestion = () => {
 
 <template>
   <div
-    class="bg-[#FFAC8C] flex flex-col h-[70vh] md:h-[80vh] md:w-[50vw] rounded items-center justify-center self-center"
+    class="bg-[#FFAC8C] flex flex-col h-[70vh] w-[90vw] md:h-[80vh] md:w-[50vw] rounded items-center justify-center self-center"
     v-if="question"
   >
     <div class="w-[90%] text-black">

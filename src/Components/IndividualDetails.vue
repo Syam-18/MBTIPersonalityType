@@ -6,7 +6,7 @@ const emit = defineEmits(['closeModal'])
 const {name, age, gender} = storeToRefs(useAnswers())
 </script>
 <template>
-  <div class="md:w-[50vw] xl:w-[30vw] w-[80vw] min-h-[50vh] bg-[#9D46E8] flex flex-col md:p-12 p-4 relative">
+  <div class="md:w-[50vw] xl:w-[30vw] w-[80vw] min-h-[50vh] bg-[#7800F2] flex flex-col md:p-12 p-4 relative">
     <h1 class="text-white text-2xl tracking-wider mb-8 mt-8">
       <span class="font-medium text-3xl text-[#ffdd33] mr-0.5">I</span>ndividual
     </h1>
