@@ -65,9 +65,9 @@ const showInfo = () => {
 </script>
 
 <template>
-  <div class="flex flex-col relative items-center justify-center p-4 md:p-8 text-black self-center" v-if="usersList.length !== 0">
+  <div class="flex flex-col relative items-center justify-center p-4 md:p-8 text-black self-center bg-[#f3f6f8]" v-if="usersList.length !== 0">
     <div class="flex gap-2 md:gap-4 items-center mb-12">
-      <h1 class="md:text-5xl text-3xl font-bold text-[#FFAC8C] grow">Personality Type</h1>
+      <h1 class="md:text-5xl text-3xl font-bold text-[#9cc9df] grow">Personality Type</h1>
       <div @click="showInfo" class="text-black relative">
         <i class="fa-solid fa-circle-info cursor-pointer" :class="{'scale-150':isShowInfo}"></i>
         <div class="bg-black text-white absolute right-[-30px] p-1 px-2 md:px-4" v-if="isShowInfo">

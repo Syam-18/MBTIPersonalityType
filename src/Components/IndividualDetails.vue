@@ -1,12 +1,16 @@
 <script setup>
+import router from '@/router';
 import { useAnswers } from '@/stores/results';
 import { storeToRefs } from 'pinia';
-import { RouterLink } from 'vue-router'
+  import { RouterLink } from 'vue-router'
 const emit = defineEmits(['closeModal'])
-const {name, age, gender} = storeToRefs(useAnswers())
+  const { name, age, gender } = storeToRefs(useAnswers())
+  const startQuiz = () => {
+    router.replace("/quiz/question/1")
+}
 </script>
 <template>
-  <div class="md:w-[50vw] xl:w-[30vw] w-[80vw] min-h-[50vh] bg-[#7800F2] flex flex-col md:p-12 p-4 relative">
+  <form class="md:w-[50vw] xl:w-[30vw] w-[80vw] min-h-[50vh] bg-[#7800F2] flex flex-col md:p-12 p-4 relative shadow-[0_0_20px_1px_rgba(120,0,242,0.8)]" @submit="startQuiz">
     <h1 class="text-white text-2xl tracking-wider mb-8 mt-8">
       <span class="font-medium text-3xl text-[#ffdd33] mr-0.5">I</span>ndividual
     </h1>
@@ -39,9 +43,9 @@ const {name, age, gender} = storeToRefs(useAnswers())
         <option class="p-0 m-0">Female</option>
       </select>
     </div>
-    <RouterLink to="/quiz/question/1" class="self-center" v-if=" name && age ">
+    <RouterLink to="/quiz/question/1" class="self-center md:mt-16 mt-8" v-if=" name && age " >
       <button
-        class="flex justify-center items-center group text-[#97dafc] md:mt-16 mt-8 gap-2 border-[#97dafc] focus:outline-[#97dafc] border-2 rounded-2xl px-4 py-2 self-center cursor-pointer hover:bg-[#6DB6DE] hover:text-white transition-all duration-500"
+        class="flex justify-center items-center group text-[#97dafc] gap-2 border-[#97dafc] focus:outline-[#97dafc] border-2 rounded-2xl px-4 py-2 self-center cursor-pointer hover:bg-[#6DB6DE] hover:text-white transition-all duration-500"
       >
         <span class="font-semibold">Let's Go</span>
         <i
@@ -56,7 +60,7 @@ const {name, age, gender} = storeToRefs(useAnswers())
     >
       <i class="fa-solid fa-xmark"></i>
     </div>
-  </div>
+  </form>
 </template>
 <style scoped>
 input[type='number']::-webkit-outer-spin-button,

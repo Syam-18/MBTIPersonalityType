@@ -112,6 +112,10 @@ const goToNextQuestion = () => {
         <i class="fa-solid fa-forward cursor-pointer font-[100]"></i>
       </div>
     </div>
+    <div class="border-[#78332c] border-1 w-[30vw] absolute  top-20 md:top-8 rounded-xl p-1">
+      <div class="bg-[#e1958d] rounded-lg p-1" :style="{ width: (qNo-1)*(100/12) + '%'}"  >
+      </div>
+    </div>
   </div>
 </template>
 

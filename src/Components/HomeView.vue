@@ -17,6 +17,7 @@ const startTest = () => {
 
 <template>
   <div class="w-[60vw] flex flex-col items-center justify-center text-center">
+    <img src="https://i.pinimg.com/736x/bb/49/fd/bb49fd2503e1a9c1779fa54be5e423ea.jpg" class="w-80 h-80"/>
     <h1 class="md:text-4xl my-4 font-medium text-2xl">MBTI <br> personality test</h1>
     <p class="text-[#555a6a] md:text-lg text-sm">Get a idea about your personality type under 3mins!</p>
     <button
