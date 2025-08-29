@@ -13,7 +13,7 @@ const filteredTypes = computed(() => {
 })
 </script>
 <template>
-  <div class="text-black md:w-[50vw] w-[80vw] flex flex-col items-center">
+  <div class="text-black md:w-[50vw] w-[80vw] flex flex-col items-center relative">
     <input
       type="search"
       placeholder="Search Personality Types eg.INFP"
@@ -36,6 +36,9 @@ const filteredTypes = computed(() => {
       </tbody>
     </table>
     <p v-if="filteredTypes.length === 0" class="text-center w-full mt-3">No types found with {{ `"${searchInput}"` }}</p>
+    <a href="https://en.wikipedia.org/?curid=93566" target='blank'>
+      <img src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@1.5x.png" alt="wiki logo" class="w-[20px] md:w-[40px] absolute top-15 md:top-4 right-4">
+    </a>
   </div>
 </template>
 <style scoped>
