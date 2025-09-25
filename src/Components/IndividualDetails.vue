@@ -29,7 +29,7 @@ const emit = defineEmits(['closeModal'])
         type="number"
         min="1"
         class="border-[#ffdd33] text-[#ffdd33] focus:border-3 font-medium border-2 rounded focus:outline-none px-4 py-2 grow"
-        placeholder="age"
+        placeholder="age from 1 to 100"
         v-model="age"
       />
     </div>
@@ -43,7 +43,7 @@ const emit = defineEmits(['closeModal'])
         <option class="p-0 m-0">Female</option>
       </select>
     </div>
-    <RouterLink to="/quiz/question/1" class="self-center md:mt-16 mt-8" v-if=" name && age " >
+    <RouterLink to="/quiz/question/1" class="self-center md:mt-16 mt-8" v-if=" name && age > 0 && age < 100" >
       <button
         class="flex justify-center items-center group text-[#97dafc] gap-2 border-[#97dafc] focus:outline-[#97dafc] border-2 rounded-2xl px-4 py-2 self-center cursor-pointer hover:bg-[#6DB6DE] hover:text-white transition-all duration-500"
       >
