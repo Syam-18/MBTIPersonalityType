@@ -29,19 +29,19 @@ export const personalityQuestions = [
   {
     id: 4,
     trait: 'SN',
-    question: 'Do you focus more on facts or possibilities?',
+    question: 'Do you rely more on your senses or your intuition?',
     options: [
-      { text: 'Concrete facts and details', value: 'S' },
-      { text: 'Ideas, meanings, and possibilities', value: 'N' },
+      { text: 'My senses (what I can see and verify)', value: 'S' },
+      { text: 'My intuition (gut feeling and patterns)', value: 'N' },
     ],
   },
   {
     id: 5,
     trait: 'SN',
-    question: 'Do you rely more on past experience or new patterns?',
+    question: 'Do you trust what has worked before or new ideas?',
     options: [
-      { text: 'Past experience and what worked before', value: 'S' },
-      { text: 'New patterns, insights, and future possibilities', value: 'N' },
+      { text: 'What has worked before', value: 'S' },
+      { text: 'New ideas and possibilities', value: 'N' },
     ],
   },
   {

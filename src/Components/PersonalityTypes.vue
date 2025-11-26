@@ -24,14 +24,14 @@ const filteredTypes = computed(() => {
     <table class="w-full">
       <tbody class="w-full bg-gray-800">
         <tr class="text-[#A3FFB2]">
-          <td class="rounded-md md:rounded-xl">Type</td>
-          <td class="rounded-md md:rounded-xl">Nickname</td>
-          <td class="rounded-md md:rounded-xl">Description</td>
+          <td class="rounded-sm">Type</td>
+          <td class="rounded-sm">Nickname</td>
+          <td class="rounded-sm">Description</td>
         </tr>
         <tr v-for="data in filteredTypes" :key="data.type" class="text-white">
-          <td class="rounded-md md:rounded-xl">{{ data.type }}</td>
-          <td class="rounded-md md:rounded-xl">{{ data.nickname }}</td>
-          <td class="rounded-md md:rounded-xl">{{ data.description }}</td>
+          <td class="rounded-sm">{{ data.type }}</td>
+          <td class="rounded-sm">{{ data.nickname }}</td>
+          <td class="rounded-sm">{{ data.description }}</td>
         </tr>
       </tbody>
     </table>

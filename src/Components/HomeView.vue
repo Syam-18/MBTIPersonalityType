@@ -29,5 +29,6 @@ const startTest = () => {
   </div>
   <div class="fixed inset-0 flex items-center justify-center bg-opacity-50" v-if="isStarted">
     <IndividualDetails class="z-10" @close-modal="handleClose"/>
+    <div class="absolute inset-0 bg-[hsl(186,67%,46%)]/5 backdrop-blur-sm z-0" @click="handleClose"></div>
   </div>
 </template>

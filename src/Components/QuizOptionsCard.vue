@@ -9,6 +9,7 @@ const { addSelectedOption, addUser } = answersSet
 const route = useRoute()
 const router = useRouter()
 const selected = ref('')
+const attempted = ref(false)
 
 const qNo = ref(parseInt(route.params.id))
 const question = ref(personalityQuestions.find((q) => q.id === parseInt(route.params.id)))
@@ -23,8 +24,12 @@ watch(
 )
 
 const goToNextQuestion = () => {
+  if(!selected.value){
+    attempted.value = true
+  }
   if (selected.value) {
     addSelectedOption(selected.value)
+    attempted.value = false
     if (qNo.value === 12) {
       addUser()
     }
@@ -51,7 +56,7 @@ const goToNextQuestion = () => {
     v-if="question"
   >
     <div class="w-[90%] text-black">
-      <h1 class="text-center mb-2 md:text-3xl text-[1.3em] font-medium text-white">
+      <h1 class="text-center mb-2 md:text-3xl text-[1.3em] font-medium text-black">
         {{ question.question }}
       </h1>
       <label
@@ -103,9 +108,10 @@ const goToNextQuestion = () => {
         <i class="fa-solid fa-angles-up cursor-pointer"></i>
       </div>
     </div> -->
+    <p :class="[!selected && attempted ? 'block' : 'hidden', 'text-left font-bold']"> * select an option</p>
     <div class="flex justify-center w-[90%] m-4">
       <div
-        class="flex gap-2 items-center bg-[#B56FED] hover:bg-[#A55EE0] text-white px-4 py-1 rounded cursor-pointer ml-1"
+        class="flex gap-2 items-center bg-[#B56FED] hover:bg-[#A55EE0] text-white px-4 py-1 rounded cursor-pointer ml-1 hover:scale-103 active:scale-97"
         @click="goToNextQuestion"
       >
         <button class="font-medium cursor-pointer tracking-wide md:text-lg">Next</button>
